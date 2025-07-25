@@ -24,7 +24,7 @@ st.markdown("""
 <style>
 /* Background and general text color */
 [data-testid="stAppViewContainer"] {
-    background-image: url("https://images.unsplash.com/photo-1521791136064-7986c2920216");  /* Your desired background */
+    background-image: url("https://images.unsplash.com/photo-1521791136064-7986c2920216");  
     background-size: cover;
     color: #000 !important;
 }
@@ -86,11 +86,6 @@ button[kind="secondary"], button[title="Predict Salary 💰"], button[tabindex="
 </style>
 """, unsafe_allow_html=True)
 
-
-
-
-#st.markdown(page_bg, unsafe_allow_html=True)
-
 # Title and header
 st.title("💼 Employee Salary Predictor")
 st.markdown("Predict salaries with machine learning! Fill in the details below 👇")
@@ -110,8 +105,6 @@ if st.button("Predict Salary 💰"):
         "education": {"High School": 0, "Bachelor’s": 1, "Master’s": 2, "PhD": 3}[education],
         "occupation": {"Tech": 0, "Sales": 1, "Executive": 2, "Admin": 3}[occupation],
         "hours_per_week": hours_per_week
-        # Add more fields depending on your dataset!
     }
-
     salary_class = predict_salary(input_data)
     st.success(f"Predicted Salary Category for {name or 'this employee'}: **{salary_class}**")
